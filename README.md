@@ -69,6 +69,7 @@ Track top performers, departmental distributions, and generate paginated dashboa
 
 # FINDINGS
 3a. There are 285 employees in total.
+
 3b. There are 238 active employees. 
 3c. There are 24 absent employees.
 3d. There are 57 employees in the Finance department, and only 46 are active.
