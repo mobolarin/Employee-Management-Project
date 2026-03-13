@@ -71,16 +71,29 @@ Track top performers, departmental distributions, and generate paginated dashboa
 3a. There are 285 employees in total.
 
 3b. There are 238 active employees. 
+
 3c. There are 24 absent employees.
+
 3d. There are 57 employees in the Finance department, and only 46 are active.
+
 4a. There are 27 employees earning more than 100,000.
+
 4b. There are 163 employees in the Finance & Human Resources departments.
+
 4c. There are 5 inactive employees. 42 are on leave.
+
 4d. There were 163 employees present in attendance only in Jan 2026.
+
 4e. There are 57 employees in the Finance department, and only 46 are active.
+
 5a. 
+
 5b. There are 285 unique departments in the organisation.
+
+5c. 
+
 5d. The top 5 performers were female data analysts, 2 in the Finance department and 1 in the Human Resources department.
+
 5e. The next 5 (6-10) were the same 3 women: Sophia Miller, Mia Hernandez and Harper Taylor.
 
 ACTIVE VS. INACTIVE 
