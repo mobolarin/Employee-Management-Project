@@ -1,4 +1,4 @@
-# Employee-Management-Project
+# Employee-Management-System-Project
 -- This is a group project by Team D of SQL Study Group for an Employee Management System (EMS)
 
 # INTRODUCTION
@@ -20,35 +20,71 @@ This project addresses that problem by designing a relational Employee Managemen
 4. Review employee performance
 5. Generate HR insights through SQL queries
 
+# TOOLS USED
+
 # DATA SOURCE
 Dataset Description
 The database consists of the following tables:
 
 EMPLOYEES
-Stores core employee information.
-Key fields: EmployeeID, FirstName, LastName, DateOfBirth, Email, HireDate, JobID, DepartmentID, ManagerID, Status
+Stores information about each employee.
+Fields: EmployeeID, FirstName, LastName, DateOfBirth, Email, HireDate, JobID, DepartmentID, ManagerID, Status
 
 DEPARTMENTS
-Stores information about company departments.
+Stores department details.
 Fields: DeptID, DeptName, Location
 
 JOBS
-Defines job roles and salary ranges.
+Stores job roles and salary ranges.
 Fields: JobID, JobTitle, MinSalary, MaxSalary
 
 SALARIES
-Tracks salary history for employees.
+Tracks employee salary history.
 Fields: SalaryID, EmployeeID, SalaryAmount, FromDate, ToDate
 
 ATTENDANCE
-Stores daily employee attendance records.
+Tracks daily attendance of employees.
 Fields: AttendanceID, EmployeeID, AttendanceDate, Status, CheckInTime, CheckOutTime
 
 PERFORMANCE
-Stores performance review information.
+Tracks employee performance reviews.
 Fields: PerformanceID, EmployeeID, ReviewDate, Rating (1–5), Comments
 
 # METHODS
+Step 1: Database Design
+Created the project database and initialised the workspace.
+
+Step 2: Table Creation/Design
+Designed and created tables using SQL CREATE TABLE statements with appropriate constraints and relationships.
+Tables created: Employees, Departments, Jobs, Salaries, Attendance, Performance
+
+Step 3: Data Exploration 
+Queries were used to retrieve and filter employee information and understand the dataset.
+
+Step 4: Data Filtering
+Query using comparison and logical operators to simulate how HR identifies performance, trends, and patterns. 
+
+Step 5: Data Organisation
+Track top performers, departmental distributions, and generate paginated dashboards.
 
 # FINDINGS
+3a. There are 285 employees in total.
+3b. There are 238 active employees. 
+3c. There are 24 absent employees.
+3d. There are 57 employees in the Finance department, and only 46 are active.
+4a. There are 27 employees earning more than 100,000.
+4b. There are 163 employees in the Finance & Human Resources departments.
+4c. There are 5 inactive employees. 42 are on leave.
+4d. There were 163 employees present in attendance only in Jan 2026.
+4e. There are 57 employees in the Finance department, and only 46 are active.
+5a. 
+5b. There are 285 unique departments in the organisation.
+5d. The top 5 performers were female data analysts, 2 in the Finance department and 1 in the Human Resources department.
+5e. The next 5 (6-10) were the same 3 women: Sophia Miller, Mia Hernandez and Harper Taylor.
+
+ACTIVE VS. INACTIVE 
+238 employees are active, 5 are inactive, and 42 are on leave.
+
+DEPARTMENTAL INSIGHTS
+
 # RECOMMENDATION
