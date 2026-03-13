@@ -1,5 +1,5 @@
-# Employee-Management-System-Project
--- This is a group project by Team D of SQL Study Group for an Employee Management System (EMS)
+# Employee Management System Project
+This is a group project by Team D of SQL Study Group for an Employee Management System (EMS)
 
 # Introduction
 The Employee Management System (EMS) is a SQL-based project that simulates how organisations manage employee information within a relational database.
