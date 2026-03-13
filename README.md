@@ -1,7 +1,7 @@
 # Employee-Management-System-Project
 -- This is a group project by Team D of SQL Study Group for an Employee Management System (EMS)
 
-# INTRODUCTION
+# Introduction
 The Employee Management System (EMS) is a SQL-based project that simulates how organisations manage employee information within a relational database.
 The system models key HR components such as employees, departments, job roles, salary records, attendance tracking, and performance reviews.
 
@@ -9,7 +9,7 @@ The goal of the project is to design a structured database schema and use SQL qu
 
 This project focuses entirely on SQL and relational database design, demonstrating core data management and querying skills used in real HR information systems.
 
-# PROBLEM STATEMENT
+# Problem Statement
 Organisations need structured systems to manage employee data efficiently. Without a well-designed database, it becomes difficult to track employee records, analyse performance, monitor attendance, or generate HR reports.
 
 This project addresses that problem by designing a relational Employee Management System database that allows HR teams to:
@@ -20,9 +20,9 @@ This project addresses that problem by designing a relational Employee Managemen
 4. Review employee performance
 5. Generate HR insights through SQL queries
 
-# TOOLS USED
+# Tools Used
 
-# DATA SOURCE
+# Data Source
 Dataset Description
 The database consists of the following tables:
 
@@ -48,9 +48,12 @@ Fields: AttendanceID, EmployeeID, AttendanceDate, Status, CheckInTime, CheckOutT
 
 PERFORMANCE
 Tracks employee performance reviews.
-Fields: PerformanceID, EmployeeID, ReviewDate, Rating (1–5), Comments
+Fields: PerformanceID, EmployeeID, ReviewDate, Rating, Comments
 
-# METHODS
+# Database Schema & ER Design
+
+
+# Methods
 Step 1: Database Design
 Created the project database and initialised the workspace.
 
@@ -67,7 +70,7 @@ Query using comparison and logical operators to simulate how HR identifies perfo
 Step 5: Data Organisation
 Track top performers, departmental distributions, and generate paginated dashboards.
 
-# FINDINGS
+# Findings
 3a. There are 285 employees in total.
 
 3b. There are 238 active employees. 
@@ -101,4 +104,4 @@ ACTIVE VS. INACTIVE
 
 DEPARTMENTAL INSIGHTS
 
-# RECOMMENDATION
+# Recommendation
