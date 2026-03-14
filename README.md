@@ -1,7 +1,7 @@
 # Employee Management System Project
 This is a group project by Team D of SQL Study Group for an Employee Management System (EMS)
 
-# Introduction
+# Overview
 The Employee Management System (EMS) is a SQL-based project that simulates how organisations manage employee information within a relational database.
 The system models key HR components such as employees, departments, job roles, salary records, attendance tracking, and performance reviews.
 
@@ -22,7 +22,15 @@ This project addresses that problem by designing a relational Employee Managemen
 
 # Tools Used
 
+Database: MySQL
+
+Editor: MySQL Workbench
+
+Data Source: Google Sheets (CSV) 
+
 # Data Source
+
+The raw data used for this project can be found in the data folder.
 
 Dataset Description
 
@@ -54,7 +62,8 @@ Fields: PerformanceID, EmployeeID, ReviewDate, Rating, Comments
 
 # Database Schema & ER Design
 
-Query Results/eer diagram.png 
+[Query Results/eer diagram.png 
+](https://github.com/mobolarin/Employee-Management-Project/blob/538a51c0838e9fc1715e0ac636b03894089117a2/Query%20Results/eer%20diagram.png)
 
 # Methods
 
@@ -80,33 +89,117 @@ Track top performers, departmental distributions, and generate paginated dashboa
 
 # Findings
 
-3a. There are 285 employees in total.
+3a. 
 
-3b. There are 238 active employees. 
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
 
-3c. There are 24 absent employees.
+There are 285 employees in total.
 
-3d. There are 57 employees in the Finance department, and only 46 are active.
+3b. 
 
-4a. There are 27 employees earning more than 100,000.
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
 
-4b. There are 163 employees in the Finance & Human Resources departments.
+There are 238 active employees. 
 
-4c. There are 5 inactive employees. 42 are on leave.
+3c. 
 
-4d. There were 163 employees present in attendance only in Jan 2026.
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
 
-4e. There are 57 employees in the Finance department, and only 46 are active.
+There are 24 absent employees.
 
-5a. 
+3d. 
 
-5b. There are 285 unique departments in the organisation.
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
+
+There are 57 employees in the Finance department, and only 46 are active.
+
+4a. 
+
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
+
+There are 27 employees earning more than 100,000.
+
+4b. 
+
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
+
+There are 163 employees in the Finance & Human Resources departments.
+
+4c. 
+
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
+
+There are 5 inactive employees. 42 are on leave.
+
+4d. 
+
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
+
+There were 163 employees present in attendance only in Jan 2026.
+
+4e. 
+
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
+
+There are 57 employees in the Finance department, and only 46 are active.
+
+5a. Order Employees by last name Alphabetically
+```sql
+SELECT * FROM employees ORDER BY LastName;
+```
+
+
+5b. Show records of employees with rhe Highest Salaries First
+```sql
+
+```
+
+There are 285 unique departments in the organisation.
 
 5c. 
 
-5d. The top 5 performers were female data analysts, 2 in the Finance department and 1 in the Human Resources department.
+```sql
 
-5e. The next 5 (6-10) were the same 3 women: Sophia Miller, Mia Hernandez and Harper Taylor.
+```
+
+
+5d. 
+```sql
+
+```
+
+The top 5 performers were female data analysts, 2 in the Finance department and 1 in the Human Resources department.
+
+5e. 
+```sql
+
+```
+
+The next 5 (6-10) were the same 3 women: Sophia Miller, Mia Hernandez and Harper Taylor.
+
+
+What are the Unique Departments in the organization?
+Top 5 Performers
+Next 5 Employees (Pagination)
+
 
 ACTIVE VS. INACTIVE 
 238 employees are active, 5 are inactive, and 42 are on leave.
