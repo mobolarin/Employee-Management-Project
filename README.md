@@ -97,7 +97,6 @@ FROM employees;
 ```
 There are 285 employees in total.
 
-
 3b. Active employees only
 
 ```sql
@@ -106,7 +105,6 @@ WHERE Status = 'Active';
 ```
 There are 238 active employees. 
 
-
 3c. Absent employees
 
 ```sql
@@ -114,7 +112,6 @@ SELECT * FROM attendance
 WHERE Status = 'Absent';
 ```
 There are 24 absent employees.
-
 
 3d. Employees from the finance department who are still active
 
@@ -127,7 +124,6 @@ WHERE DeptName = 'Finance' AND Status = 'Active';
 ```
 There are 57 employees in the Finance department, and only 46 are active.
 
-
 4a. Employee records of those paid above one hundred thousand 
 
 ```sql
@@ -137,7 +133,6 @@ JOIN salaries AS S
 ON E.EmployeeID = S.EmployeeID
 WHERE SalaryAmount > 100000;
 ```
-
 There are 27 employees earning more than 100,000.
 
 4b. Employees from the HR and Finance department
@@ -149,7 +144,6 @@ JOIN departments AS D
 ON D.DeptID = E.DepartmentID
 WHERE DeptName IN ('Finance', 'Human Resources');
 ```
-
 There are 163 employees in the Finance & Human Resources departments.
 
 4c. Records of employees aren’t active
@@ -158,7 +152,6 @@ There are 163 employees in the Finance & Human Resources departments.
 SELECT * FROM employees
 WHERE Status = 'Inactive';
 ```
-
 There are 5 inactive employees. 42 employees however, are on leave.
 
 4d. Attendance records of employees who were present in attendance only in Jan 2026
@@ -171,7 +164,6 @@ ON E.EmployeeID = A.EmployeeID
 WHERE A.AttendanceDate LIKE '2026-01-%'
 AND A.Status = 'Present';
 ```
-
 There were 163 employees present in attendance only in Jan 2026.
 
 4e. Employees from finance department who are still active
@@ -183,7 +175,6 @@ JOIN departments AS D
 ON D.DeptID = E.DepartmentID
 WHERE DeptName = 'Finance' AND Status = 'Active';
 ```
-
 There are 57 employees in the Finance department, and only 46 are active.
 
 5a. Order Employees by last name in alphabetical order
@@ -192,7 +183,6 @@ There are 57 employees in the Finance department, and only 46 are active.
 SELECT * FROM employees
 ORDER BY LastName;
 ```
-
 
 5b. Show records of employees with the Highest Salaries First
 
@@ -207,9 +197,9 @@ ORDER BY S.SalaryAmount DESC;
 5c. Unique Departments in the organisation
 
 ```sql
-SELECT DISTINCT * FROM departments;
+SELECT DISTINCT DeptName AS Unique_Depts
+FROM departments;
 ```
-
 There are 285 unique departments in the organisation.
 
 5d. Top 5 Performers
@@ -222,7 +212,6 @@ ON E.EmployeeID = P.EmployeeID
 ORDER BY Rating DESC
 LIMIT 0,5;
 ```
-
 The top 5 performers were female data analysts, 2 in the Finance department and 1 in the Human Resources department.
 
 5e. Next 5 Employees (Pagination)
@@ -235,8 +224,40 @@ ON E.EmployeeID = P.EmployeeID
 ORDER BY Rating DESC
 LIMIT 5,5;
 ```
-
 The next 5 (6-10) were the same 3 women: Sophia Miller, Mia Hernandez and Harper Taylor.
+
+# Additional Analysis
+
+1. Employees per Department
+```sql
+SELECT D.DeptName, COUNT(E.EmployeeID) AS Employee_Count
+FROM Employees E
+JOIN Departments D
+ON E.DepartmentID = D.DeptID
+GROUP BY D.DeptName
+ORDER BY Employee_Count DESC;
+```
+There are 106 in HR, 62 in operations, 60 in Sales & 57 in Finance.
+
+2. Average Salary by Department
+```sql
+SELECT D.DeptName, AVG(S.SalaryAmount) AS Avg_Salary
+FROM Employees E
+JOIN Salaries S ON E.EmployeeID = S.EmployeeID
+JOIN Departments D ON E.DepartmentID = D.DeptID
+GROUP BY D.DeptName
+ORDER BY Avg_Salary DESC;
+```
+
+3. Performance Rating Distribution
+```sql
+SELECT Rating, COUNT(*) AS Number_of_Employees
+FROM Performance
+GROUP BY Rating
+ORDER BY Rating DESC;
+```
 
 
 # Recommendations
+1.
+5. Recognize and Support High Performers
