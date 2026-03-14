@@ -36,27 +36,27 @@ The raw data used for this project can be found in the data folder.
 
 The database consists of the following tables:
 
-EMPLOYEES: Stores information about each employee.
+1. EMPLOYEES - Stores information about each employee.
 
 Fields: EmployeeID, FirstName, LastName, DateOfBirth, Email, HireDate, JobID, DepartmentID, ManagerID, Status
 
-DEPARTMENTS: Stores department details.
+2. DEPARTMENTS - Stores department details.
 
 Fields: DeptID, DeptName, Location
 
-JOBS: Stores job roles and salary ranges.
+3. JOBS - Stores job roles and salary ranges.
 
 Fields: JobID, JobTitle, MinSalary, MaxSalary
 
-SALARIES; Tracks employee salary history.
+4. SALARIES - Tracks employee salary history.
 
 Fields: SalaryID, EmployeeID, SalaryAmount, FromDate, ToDate
 
-ATTENDANCE: Tracks daily attendance of employees.
+5. ATTENDANCE - Tracks daily attendance of employees.
 
 Fields: AttendanceID, EmployeeID, AttendanceDate, Status, CheckInTime, CheckOutTime
 
-PERFORMANCE: Tracks employee performance reviews.
+6. PERFORMANCE - Tracks employee performance reviews.
 
 Fields: PerformanceID, EmployeeID, ReviewDate, Rating, Comments
 
