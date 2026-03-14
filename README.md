@@ -1,15 +1,14 @@
 # Employee Management System Project
 This is a group project by Team D of SQL Study Group for an Employee Management System (EMS).
 
-# Overview
-The Employee Management System (EMS) is a SQL-based project that simulates how organisations manage employee information within a relational database.
-The system models key HR components such as employees, departments, job roles, salary records, attendance tracking, and performance reviews.
+## Overview
+The Employee Management System (EMS) is a SQL-based project that simulates how organisations manage employee information within a relational database. The EMS database consists of six relational tables representing employees, departments, job roles, salaries, attendance, and performance.
 
 The goal of the project is to design a structured database schema and use SQL queries to retrieve, filter, and analyse employee-related data.
 
 This project focuses entirely on SQL and relational database design, demonstrating core data management and querying skills used in real HR information systems.
 
-# Problem Statement
+## Problem Statement
 Organisations need structured systems to manage employee data efficiently. Without a well-designed database, it becomes difficult to track employee records, analyse performance, monitor attendance, or generate HR reports.
 
 This project addresses that problem by designing a relational Employee Management System database that allows HR teams to:
@@ -20,7 +19,7 @@ This project addresses that problem by designing a relational Employee Managemen
 4. Review employee performance
 5. Generate HR insights through SQL queries
 
-# Tools Used
+## Tools Used
 
 Database: MySQL
 
@@ -28,11 +27,9 @@ Editor: MySQL Workbench
 
 Data Source: Google Sheets (CSV) 
 
-# Data Source
+## Data Source
 
 The raw data used for this project can be found in the data folder.
-
-** Dataset Description **
 
 The database consists of the following tables:
 
@@ -65,7 +62,7 @@ Fields: PerformanceID, EmployeeID, ReviewDate, Rating, Comments
 [Query Results/eer diagram.png 
 ](https://github.com/mobolarin/Employee-Management-Project/blob/538a51c0838e9fc1715e0ac636b03894089117a2/Query%20Results/eer%20diagram.png)
 
-# Methods
+## Methods
 
 Step 1: Database Design
 
@@ -87,7 +84,7 @@ Step 5: Data Organisation
 
 Track top performers, departmental distributions, and generate paginated dashboards.
 
-# Findings
+## Findings
 
 3a. All Employees: Full name & Email
 
@@ -97,6 +94,10 @@ FROM employees;
 ```
 There are 285 employees in total.
 
+### Highest Salary Employees
+
+![Salary Query Result](images/salary_query_result.png)
+ 
 3b. Active employees only
 
 ```sql
@@ -104,6 +105,7 @@ SELECT * FROM employees
 WHERE Status = 'Active';
 ```
 There are 238 active employees. 
+![Active employees](Images/3b.png)
 
 3c. Absent employees
 
@@ -200,7 +202,7 @@ ORDER BY S.SalaryAmount DESC;
 SELECT DISTINCT DeptName AS Unique_Depts
 FROM departments;
 ```
-There are 285 unique departments in the organisation.
+There are 285 unique departments in the organisation. Only 4 are in use.
 
 5d. Top 5 Performers
 
@@ -226,7 +228,7 @@ LIMIT 5,5;
 ```
 The next 5 (6-10) were the same 3 women: Sophia Miller, Mia Hernandez and Harper Taylor.
 
-# Additional Analysis
+### Additional Analysis
 
 1. Employees per Department
 ```sql
@@ -256,8 +258,16 @@ FROM Performance
 GROUP BY Rating
 ORDER BY Rating DESC;
 ```
+This shows how employee performance ratings are distributed across the organization and helps identify performance trends.
 
 
-# Recommendations
-1.
-5. Recognize and Support High Performers
+## Recommendations
+-- i. Monitor workforce status regularly to manage inactive employees and staff currently on leave.
+
+-- ii. Review employee distribution across departments, particularly Finance and Human Resources where a large share of employees are concentrated.
+
+-- iii. Conduct periodic salary reviews to ensure compensation remains fair and aligned with job roles, especially for employees earning above 100,000.
+
+-- iv. Improve attendance tracking systems to identify absenteeism trends and support better workforce accountability.
+
+-- v. Recognize high-performing employees through incentives, promotions, or professional development opportunities to improve retention and productivity
