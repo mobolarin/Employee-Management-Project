@@ -97,7 +97,6 @@ FROM employees;
 ```
 There are 285 employees in total.
 
-![What is this](Query Results/3b.png)
 
 3b. Active employees only
 
@@ -105,8 +104,8 @@ There are 285 employees in total.
 SELECT * FROM employees
 WHERE Status = 'Active';
 ```
-
 There are 238 active employees. 
+
 
 3c. Absent employees
 
@@ -114,8 +113,8 @@ There are 238 active employees.
 SELECT * FROM attendance
 WHERE Status = 'Absent';
 ```
-
 There are 24 absent employees.
+
 
 3d. Employees from the finance department who are still active
 
@@ -126,8 +125,8 @@ JOIN departments AS D
 ON D.DeptID = E.DepartmentID
 WHERE DeptName = 'Finance' AND Status = 'Active';
 ```
-
 There are 57 employees in the Finance department, and only 46 are active.
+
 
 4a. Employee records of those paid above one hundred thousand 
 
