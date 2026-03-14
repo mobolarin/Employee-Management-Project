@@ -95,10 +95,9 @@ Track top performers, departmental distributions, and generate paginated dashboa
 SELECT CONCAT(FirstName,' ', LastName) AS Full_name, email
 FROM employees;
 ```
-
 There are 285 employees in total.
 
-https://github.com/mobolarin/Employee-Management-Project/blob/20733e4479a72074b5cae6b13a4e319b02440ebb/Query%20Results/3a.png
+![What is this](Query Results/3b.png)
 
 3b. Active employees only
 
@@ -108,8 +107,6 @@ WHERE Status = 'Active';
 ```
 
 There are 238 active employees. 
-
-Query Results/3b.png
 
 3c. Absent employees
 
@@ -229,7 +226,7 @@ LIMIT 0,5;
 
 The top 5 performers were female data analysts, 2 in the Finance department and 1 in the Human Resources department.
 
-5e. ext 5 Employees (Pagination)
+5e. Next 5 Employees (Pagination)
 
 ```sql
 SELECT * 
