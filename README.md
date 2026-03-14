@@ -59,8 +59,7 @@ Fields: PerformanceID, EmployeeID, ReviewDate, Rating, Comments
 
 # Database Schema & ER Design
 
-[Query Results/eer diagram.png 
-](https://github.com/mobolarin/Employee-Management-Project/blob/538a51c0838e9fc1715e0ac636b03894089117a2/Query%20Results/eer%20diagram.png)
+![EER Diagram](Images/eer diagram.png)
 
 ## Methods
 
@@ -93,10 +92,7 @@ SELECT CONCAT(FirstName,' ', LastName) AS Full_name, email
 FROM employees;
 ```
 There are 285 employees in total.
-
-### Highest Salary Employees
-
-![Salary Query Result](images/salary_query_result.png)
+![3a](Images/3a.png)
  
 3b. Active employees only
 
@@ -114,6 +110,7 @@ SELECT * FROM attendance
 WHERE Status = 'Absent';
 ```
 There are 24 absent employees.
+![3c](Images/3c.png)
 
 3d. Employees from the finance department who are still active
 
@@ -125,6 +122,7 @@ ON D.DeptID = E.DepartmentID
 WHERE DeptName = 'Finance' AND Status = 'Active';
 ```
 There are 57 employees in the Finance department, and only 46 are active.
+![3d](Images/3d.png)
 
 4a. Employee records of those paid above one hundred thousand 
 
@@ -136,6 +134,7 @@ ON E.EmployeeID = S.EmployeeID
 WHERE SalaryAmount > 100000;
 ```
 There are 27 employees earning more than 100,000.
+![4a](Images/4a.png)
 
 4b. Employees from the HR and Finance department
 
@@ -147,6 +146,7 @@ ON D.DeptID = E.DepartmentID
 WHERE DeptName IN ('Finance', 'Human Resources');
 ```
 There are 163 employees in the Finance & Human Resources departments.
+![4b](Images/4b.png)
 
 4c. Records of employees aren’t active
 
@@ -155,6 +155,7 @@ SELECT * FROM employees
 WHERE Status = 'Inactive';
 ```
 There are 5 inactive employees. 42 employees however, are on leave.
+![4c](Images/4c.png)
 
 4d. Attendance records of employees who were present in attendance only in Jan 2026
 
@@ -167,6 +168,7 @@ WHERE A.AttendanceDate LIKE '2026-01-%'
 AND A.Status = 'Present';
 ```
 There were 163 employees present in attendance only in Jan 2026.
+![4d](Images/4d.png)
 
 4e. Employees from finance department who are still active
 
@@ -178,6 +180,7 @@ ON D.DeptID = E.DepartmentID
 WHERE DeptName = 'Finance' AND Status = 'Active';
 ```
 There are 57 employees in the Finance department, and only 46 are active.
+![4e](Images/4e.png)
 
 5a. Order Employees by last name in alphabetical order
 
@@ -185,6 +188,7 @@ There are 57 employees in the Finance department, and only 46 are active.
 SELECT * FROM employees
 ORDER BY LastName;
 ```
+![5a](Images/5a.png)
 
 5b. Show records of employees with the Highest Salaries First
 
@@ -195,6 +199,8 @@ JOIN salaries AS S
 ON E.EmployeeID = S.EmployeeID
 ORDER BY S.SalaryAmount DESC;
 ```
+![5b](Images/5b.png)
+
 
 5c. Unique Departments in the organisation
 
@@ -203,6 +209,7 @@ SELECT DISTINCT DeptName AS Unique_Depts
 FROM departments;
 ```
 There are 285 unique departments in the organisation. Only 4 are in use.
+![5c](Images/5c.png)
 
 5d. Top 5 Performers
 
@@ -215,6 +222,7 @@ ORDER BY Rating DESC
 LIMIT 0,5;
 ```
 The top 5 performers were female data analysts, 2 in the Finance department and 1 in the Human Resources department.
+![5d](Images/5d.png)
 
 5e. Next 5 Employees (Pagination)
 
@@ -227,6 +235,7 @@ ORDER BY Rating DESC
 LIMIT 5,5;
 ```
 The next 5 (6-10) were the same 3 women: Sophia Miller, Mia Hernandez and Harper Taylor.
+![5e](Images/5e.png)
 
 ### Additional Analysis
 
@@ -240,6 +249,8 @@ GROUP BY D.DeptName
 ORDER BY Employee_Count DESC;
 ```
 There are 106 in HR, 62 in operations, 60 in Sales & 57 in Finance.
+![A1](Images/A1.png)
+
 
 2. Average Salary by Department
 ```sql
@@ -250,6 +261,7 @@ JOIN Departments D ON E.DepartmentID = D.DeptID
 GROUP BY D.DeptName
 ORDER BY Avg_Salary DESC;
 ```
+![A2](Images/A2.png)
 
 3. Performance Rating Distribution
 ```sql
@@ -259,15 +271,15 @@ GROUP BY Rating
 ORDER BY Rating DESC;
 ```
 This shows how employee performance ratings are distributed across the organization and helps identify performance trends.
-
+![A3](Images/A3.png)
 
 ## Recommendations
 -- i. Monitor workforce status regularly to manage inactive employees and staff currently on leave.
 
 -- ii. Review employee distribution across departments, particularly Finance and Human Resources where a large share of employees are concentrated.
 
--- iii. Conduct periodic salary reviews to ensure compensation remains fair and aligned with job roles, especially for employees earning above 100,000.
+-- iii. Conduct periodic salary reviews to ensure compensation remains fair.
 
 -- iv. Improve attendance tracking systems to identify absenteeism trends and support better workforce accountability.
 
--- v. Recognize high-performing employees through incentives, promotions, or professional development opportunities to improve retention and productivity
+-- v. Recognize high-performing employees through incentives, promotions, or professional development opportunities to improve retention and productivity.
