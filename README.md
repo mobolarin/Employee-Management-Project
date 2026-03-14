@@ -1,5 +1,5 @@
 # Employee Management System Project
-This is a group project by Team D of SQL Study Group for an Employee Management System (EMS)
+This is a group project by Team D of SQL Study Group for an Employee Management System (EMS).
 
 # Overview
 The Employee Management System (EMS) is a SQL-based project that simulates how organisations manage employee information within a relational database.
@@ -32,7 +32,7 @@ Data Source: Google Sheets (CSV)
 
 The raw data used for this project can be found in the data folder.
 
-Dataset Description
+** Dataset Description **
 
 The database consists of the following tables:
 
@@ -89,121 +89,158 @@ Track top performers, departmental distributions, and generate paginated dashboa
 
 # Findings
 
-3a. 
+3a. All Employees: Full name & Email
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT CONCAT(FirstName,' ', LastName) AS Full_name, email
+FROM employees;
 ```
 
 There are 285 employees in total.
 
-3b. 
+https://github.com/mobolarin/Employee-Management-Project/blob/20733e4479a72074b5cae6b13a4e319b02440ebb/Query%20Results/3a.png
+
+3b. Active employees only
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT * FROM employees
+WHERE Status = 'Active';
 ```
 
 There are 238 active employees. 
 
-3c. 
+Query Results/3b.png
+
+3c. Absent employees
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT * FROM attendance
+WHERE Status = 'Absent';
 ```
 
 There are 24 absent employees.
 
-3d. 
+3d. Employees from the finance department who are still active
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT *
+FROM employees AS E
+JOIN departments AS D
+ON D.DeptID = E.DepartmentID
+WHERE DeptName = 'Finance' AND Status = 'Active';
 ```
 
 There are 57 employees in the Finance department, and only 46 are active.
 
-4a. 
+4a. Employee records of those paid above one hundred thousand 
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT *
+FROM employees AS E
+JOIN salaries AS S
+ON E.EmployeeID = S.EmployeeID
+WHERE SalaryAmount > 100000;
 ```
 
 There are 27 employees earning more than 100,000.
 
-4b. 
+4b. Employees from the HR and Finance department
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT * 
+FROM employees AS E
+JOIN departments AS D
+ON D.DeptID = E.DepartmentID
+WHERE DeptName IN ('Finance', 'Human Resources');
 ```
 
 There are 163 employees in the Finance & Human Resources departments.
 
-4c. 
+4c. Records of employees aren’t active
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT * FROM employees
+WHERE Status = 'Inactive';
 ```
 
-There are 5 inactive employees. 42 are on leave.
+There are 5 inactive employees. 42 employees however, are on leave.
 
-4d. 
+4d. Attendance records of employees who were present in attendance only in Jan 2026
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT * 
+FROM employees AS E
+JOIN attendance AS A
+ON E.EmployeeID = A.EmployeeID
+WHERE A.AttendanceDate LIKE '2026-01-%'
+AND A.Status = 'Present';
 ```
 
 There were 163 employees present in attendance only in Jan 2026.
 
-4e. 
+4e. Employees from finance department who are still active
 
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT *
+FROM employees AS E
+JOIN departments AS D
+ON D.DeptID = E.DepartmentID
+WHERE DeptName = 'Finance' AND Status = 'Active';
 ```
 
 There are 57 employees in the Finance department, and only 46 are active.
 
-5a. Order Employees by last name Alphabetically
+5a. Order Employees by last name in alphabetical order
+
 ```sql
-SELECT * FROM employees ORDER BY LastName;
+SELECT * FROM employees
+ORDER BY LastName;
 ```
 
 
-5b. Show records of employees with rhe Highest Salaries First
-```sql
+5b. Show records of employees with the Highest Salaries First
 
+```sql
+SELECT * 
+FROM employees AS E
+JOIN salaries AS S
+ON E.EmployeeID = S.EmployeeID
+ORDER BY S.SalaryAmount DESC;
+```
+
+5c. Unique Departments in the organisation
+
+```sql
+SELECT DISTINCT * FROM departments;
 ```
 
 There are 285 unique departments in the organisation.
 
-5c. 
+5d. Top 5 Performers
 
 ```sql
-
-```
-
-
-5d. 
-```sql
-
+SELECT * 
+FROM employees AS E
+JOIN performance AS P 
+ON E.EmployeeID = P.EmployeeID
+ORDER BY Rating DESC
+LIMIT 0,5;
 ```
 
 The top 5 performers were female data analysts, 2 in the Finance department and 1 in the Human Resources department.
 
-5e. 
-```sql
+5e. ext 5 Employees (Pagination)
 
+```sql
+SELECT * 
+FROM employees AS E
+JOIN performance AS P 
+ON E.EmployeeID = P.EmployeeID
+ORDER BY Rating DESC
+LIMIT 5,5;
 ```
 
 The next 5 (6-10) were the same 3 women: Sophia Miller, Mia Hernandez and Harper Taylor.
 
 
-What are the Unique Departments in the organization?
-Top 5 Performers
-Next 5 Employees (Pagination)
-
-
-ACTIVE VS. INACTIVE 
-238 employees are active, 5 are inactive, and 42 are on leave.
-
-DEPARTMENTAL INSIGHTS
-
-# Recommendation
+# Recommendations
