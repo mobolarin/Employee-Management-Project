@@ -23,54 +23,63 @@ This project addresses that problem by designing a relational Employee Managemen
 # Tools Used
 
 # Data Source
+
 Dataset Description
+
 The database consists of the following tables:
 
-EMPLOYEES
-Stores information about each employee.
+EMPLOYEES: Stores information about each employee.
+
 Fields: EmployeeID, FirstName, LastName, DateOfBirth, Email, HireDate, JobID, DepartmentID, ManagerID, Status
 
-DEPARTMENTS
-Stores department details.
+DEPARTMENTS: Stores department details.
+
 Fields: DeptID, DeptName, Location
 
-JOBS
-Stores job roles and salary ranges.
+JOBS: Stores job roles and salary ranges.
+
 Fields: JobID, JobTitle, MinSalary, MaxSalary
 
-SALARIES
-Tracks employee salary history.
+SALARIES; Tracks employee salary history.
+
 Fields: SalaryID, EmployeeID, SalaryAmount, FromDate, ToDate
 
-ATTENDANCE
-Tracks daily attendance of employees.
+ATTENDANCE: Tracks daily attendance of employees.
+
 Fields: AttendanceID, EmployeeID, AttendanceDate, Status, CheckInTime, CheckOutTime
 
-PERFORMANCE
-Tracks employee performance reviews.
+PERFORMANCE: Tracks employee performance reviews.
+
 Fields: PerformanceID, EmployeeID, ReviewDate, Rating, Comments
 
 # Database Schema & ER Design
 
+Query Results/eer diagram.png 
 
 # Methods
+
 Step 1: Database Design
+
 Created the project database and initialised the workspace.
 
 Step 2: Table Creation/Design
-Designed and created tables using SQL CREATE TABLE statements with appropriate constraints and relationships.
-Tables created: Employees, Departments, Jobs, Salaries, Attendance, Performance
+
+Designed and created tables using SQL CREATE TABLE statements with appropriate constraints and relationships. Tables created include: Employees, Departments, Jobs, Salaries, Attendance, Performance
 
 Step 3: Data Exploration 
+
 Queries were used to retrieve and filter employee information and understand the dataset.
 
 Step 4: Data Filtering
+
 Query using comparison and logical operators to simulate how HR identifies performance, trends, and patterns. 
 
 Step 5: Data Organisation
+
 Track top performers, departmental distributions, and generate paginated dashboards.
 
 # Findings
+
 3a. There are 285 employees in total.
 
 3b. There are 238 active employees. 
