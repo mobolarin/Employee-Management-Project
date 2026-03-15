@@ -59,7 +59,7 @@ Fields: PerformanceID, EmployeeID, ReviewDate, Rating, Comments
 
 # Database Schema & ER Design
 
-![EER Diagram](Images/eer diagram.png)
+![EER Diagram](Images/eer_diagram.png)
 
 ## Methods
 
